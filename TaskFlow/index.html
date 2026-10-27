@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TaskFlow project overview and Agile assessment evidence.">
+    <title>TaskFlow | Agile Portfolio</title>
+
+    <style>
+        :root {
+            --bg: #f5f7fb;
+            --surface: #ffffff;
+            --text: #182230;
+            --muted: #667085;
+            --primary: #3659d9;
+            --border: #e4e7ec;
+            --soft-blue: #eaf0ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1050px, 90%);
+            margin: auto;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .back-link {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover,
+        .document-link:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 76px 0 62px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 5px 11px;
+            border-radius: 30px;
+            background: var(--soft-blue);
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+        }
+
+        h1 {
+            max-width: 750px;
+            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .section {
+            padding-bottom: 70px;
+        }
+
+        .section-heading {
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 6px;
+            font-size: 1.7rem;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 215px;
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(24, 34, 48, 0.06);
+        }
+
+        .number {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            margin-bottom: 17px;
+            border-radius: 10px;
+            background: var(--soft-blue);
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .document-link {
+            margin-top: auto;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .about {
+            margin-bottom: 70px;
+            padding: 28px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .about h2 {
+            margin-bottom: 12px;
+        }
+
+        .about p {
+            color: var(--muted);
+        }
+
+        .about p + p {
+            margin-top: 10px;
+        }
+
+        footer {
+            padding: 25px 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 50px 0 42px;
+            }
+
+            h1 {
+                letter-spacing: -1px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav aria-label="Main navigation">
+                <a class="logo" href="./index.html">
+                    Task<span>Flow</span>
+                </a>
+
+                <a class="back-link" href="../index.html">
+                    ← Back to project
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">AGILE PROJECT PORTFOLIO</span>
+
+                <h1>Building TaskFlow, one step at a time.</h1>
+
+                <p>
+                    TaskFlow is a task-management web application designed
+                    to help users organise their work, manage priorities
+                    and monitor progress. This page presents the project's
+                    Agile planning documents, requirements, work breakdown
+                    and reflections on the development process.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Assessment Evidence</h2>
+                    <p>
+                        Explore the five Agile artefacts prepared for this
+                        project portfolio.
+                    </p>
+                </div>
+
+                <div class="grid">
+                    <article class="card">
+                        <span class="number">01</span>
+                        <h3>Agile Team Charter</h3>
+                        <p>
+                            The project vision, objectives, responsibilities,
+                            working agreements, tools and definition of done.
+                        </p>
+                        <a class="document-link"
+                           href="../portfolio-evidence/agile-team-charter.md">
+                            View team charter →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <span class="number">02</span>
+                        <h3>User Stories and Tasks</h3>
+                        <p>
+                            User requirements, acceptance criteria and the
+                            tasks associated with implementing features.
+                        </p>
+                        <a class="document-link"
+                           href="../portfolio-evidence/user-stories-and-tasks.md">
+                            View user stories →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <span class="number">03</span>
+                        <h3>Product Backlog</h3>
+                        <p>
+                            Prioritised features, requirements, security
+                            considerations and documentation tasks.
+                        </p>
+                        <a class="document-link"
+                           href="../portfolio-evidence/product-backlog.md">
+                            View product backlog →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <span class="number">04</span>
+                        <h3>Sprint Backlog</h3>
+                        <p>
+                            Development work organised into manageable
+                            stages, with progress and outcomes recorded.
+                        </p>
+                        <a class="document-link"
+                           href="../portfolio-evidence/sprint-backlog.md">
+                            View sprint backlog →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <span class="number">05</span>
+                        <h3>Agile Logbook</h3>
+                        <p>
+                            A retrospective record of development activities,
+                            testing, challenges and lessons learned.
+                        </p>
+                        <a class="document-link"
+                           href="../portfolio-evidence/agile-logbook.md">
+                            View Agile logbook →
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="about">
+                <h2>About the Application</h2>
+                <p>
+                    TaskFlow supports account registration and login,
+                    task creation and management, task filtering, dashboard
+                    statistics and persistent data storage.
+                </p>
+                <p>
+                    The application uses HTML, CSS and JavaScript for the
+                    front end, Node.js and Express for the server, and
+                    SQLite for data storage.
+                </p>
+                <p>
+                    The evidence documents explain the project's
+                    requirements and planning, as well as the development
+                    process and lessons learned.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            TaskFlow · Agile Project Portfolio · 2026
+        </div>
+    </footer>
+</body>
+</html>
