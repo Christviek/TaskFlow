@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow helps you organize tasks, manage priorities and track your progress.">
+  <title>TaskFlow — Task Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="TaskFlow home">
+        <span class="brand-icon">T</span>
+        <span>TaskFlow</span>
+      </a>
+
+      <p class="nav-heading">WORKSPACE</p>
+      <nav aria-label="Main navigation">
+        <a class="nav-link active" href="#dashboard">▦ Dashboard</a>
+        <a class="nav-link" href="#tasks">☷ All tasks</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p class="nav-heading">YOUR FOCUS</p>
+        <p class="sidebar-note">Small steps. Real progress.</p>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h1>My dashboard</h1>
+        </div>
+        <span class="avatar" aria-label="User profile">U</span>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">MAKE TODAY COUNT</p>
+          <h2>Get things done.</h2>
+          <p>Plan your work, focus on what matters, and keep moving.</p>
+        </div>
+        <span class="welcome-mark" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="stats" aria-label="Task summary">
+        <article class="stat-card">
+          <p>Total tasks</p>
+          <strong id="total-count">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>In progress</p>
+          <strong id="progress-count">0</strong>
+        </article>
+        <article class="stat-card">
+          <p>Completed</p>
+          <strong id="completed-count">0</strong>
+        </article>
+      </section>
+
+      <section class="task-section" id="tasks">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">STAY ORGANIZED</p>
+            <h2>Your tasks</h2>
+          </div>
+          <button class="primary-button" id="add-task-button" type="button">
+            + Add task
+          </button>
+        </div>
+
+        <form id="task-form" class="task-form" hidden>
+          <h3 id="form-heading">Create a task</h3>
+
+          <label for="task-title">Task name</label>
+          <input id="task-title" name="title" type="text"
+                 placeholder="e.g. Finish assignment" maxlength="100" required>
+
+          <label for="task-description">Description (optional)</label>
+          <textarea id="task-description" name="description"
+                    placeholder="What needs to be done?" maxlength="500"></textarea>
+
+          <div class="form-row">
+            <div>
+              <label for="task-priority">Priority</label>
+              <select id="task-priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="task-due-date">Due date</label>
+              <input id="task-due-date" name="dueDate" type="date">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="secondary-button" id="cancel-task-button" type="button">
+              Cancel
+            </button>
+            <button class="primary-button" type="submit">Save task</button>
+          </div>
+        </form>
+
+        <div class="task-toolbar">
+          <label class="search-box">
+            <span class="visually-hidden">Search tasks</span>
+            <input id="task-search" type="search" placeholder="Search tasks...">
+          </label>
+
+          <label>
+            <span class="visually-hidden">Filter by status</span>
+            <select id="status-filter">
+              <option value="all">All statuses</option>
+              <option value="todo">To do</option>
+              <option value="in-progress">In progress</option>
+              <option value="done">Done</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="visually-hidden">Filter by priority</span>
+            <select id="priority-filter">
+              <option value="all">All priorities</option>
+              <option value="high">High priority</option>
+              <option value="medium">Medium priority</option>
+              <option value="low">Low priority</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="task-list" id="task-list" aria-live="polite">
+          <div class="empty-state">
+            <span aria-hidden="true">✳</span>
+            <h3>Your space to focus</h3>
+            <p>Your tasks will appear here when you add them.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        TaskFlow <span>·</span> One step at a time.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
