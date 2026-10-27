@@ -134,3 +134,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Local SQLite database
+taskflow.db
+taskflow.db-shm
+taskflow.db-wal
+
+# macOS metadata
+.DS_Store
+
+# Nested repository setup folder
+/TaskFlow/
